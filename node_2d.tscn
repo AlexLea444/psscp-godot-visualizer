@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djumpig7umkxi"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_ofovn"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(576, 324)
+script = ExtResource("1_ofovn")
