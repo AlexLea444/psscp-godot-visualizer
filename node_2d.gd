@@ -54,6 +54,9 @@ func _process(_delta):
 			var result = json.get_data()
 			if result.has("radius") and result.has("angle"):
 				update_user_position(result.radius, result.angle)
+			if result.has ("sounddegree"):
+				var sprite = get_node("Sprite2D")
+				sprite.move_to_angle(result.sounddegree)
 
 	# Redraw the scene
 	queue_redraw()

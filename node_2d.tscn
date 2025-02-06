@@ -1,7 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://djumpig7umkxi"]
+[gd_scene load_steps=7 format=3 uid="uid://djumpig7umkxi"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_ofovn"]
+[ext_resource type="Script" path="res://path_follow_2d.gd" id="2_ilpxd"]
+[ext_resource type="Script" path="res://path_2d.gd" id="2_m0xp0"]
+[ext_resource type="Texture2D" uid="uid://cm28fov0yg7ta" path="res://bird.svg" id="4_lbm0y"]
+[ext_resource type="Script" path="res://sprite_2d.gd" id="5_e18u6"]
+
+[sub_resource type="Curve2D" id="Curve2D_1srbq"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(576, 324)
+position = Vector2(635, 352)
 script = ExtResource("1_ofovn")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1srbq")
+script = ExtResource("2_m0xp0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(291, 156)
+rotation = 3.02448
+script = ExtResource("2_ilpxd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(293.337, 175.863)
+rotation = 3.02448
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_lbm0y")
+script = ExtResource("5_e18u6")
